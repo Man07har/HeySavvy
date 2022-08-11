@@ -15,8 +15,3 @@ struct node * reverse(){
     head=temp2;
 
 }
-int main(){
-node *newNode;
-newNode=reverse();
-return 0;
-}
