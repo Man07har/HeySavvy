@@ -1,9 +1,19 @@
-#include<iostream>
+#include<bits/stdc++.h>
+#include<vector>
 using namespace std;
 int main(){
-int n;
-int a[10]={2,4,1,5,6,7,2};
-sort(a.begin(),a.end());
-
+    vector <int> vect;
+    vect.push_back(20);
+    vect.push_back(12);
+    vect.push_back(34);
+    for(auto i:vect){
+       cout<<i<<" "<<endl;
+    }
+    cout<<"Here comes the wonder that you were looking for"<<endl;
+    sort(vect.begin(),vect.end());
+    for(auto i:vect){
+        
+        cout<<i<<endl;
+    }
     return 0;
 }
