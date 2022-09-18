@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int solve(){
+void solve(){
     int n;
     cin>>n;
     unordered_set<int> st;
