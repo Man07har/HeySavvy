@@ -79,8 +79,5 @@ Constraints:
     int ans = object.Count(L,R);
     cout<<ans<<"/n";
     }
-
-
-
-    return 0;
+     return 0;
  }
