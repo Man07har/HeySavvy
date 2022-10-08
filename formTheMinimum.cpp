@@ -3,7 +3,7 @@ using namespace std;
 
 class min{
     public:
-    int minimum(int min[]){
+    int minimum(int min1[]){
         
       int temp[] = {};
 
