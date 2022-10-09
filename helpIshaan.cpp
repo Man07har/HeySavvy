@@ -60,7 +60,7 @@ using namespace std;
                 return (x+i) - N;
             }
             
-            i++;
+             i++;
         }
     }
     
