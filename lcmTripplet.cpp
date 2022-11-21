@@ -80,6 +80,7 @@ class Solution {
             return (N-1)*(N-2)*N;
 
         }
+    
 
     }
 };
