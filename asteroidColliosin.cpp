@@ -44,18 +44,10 @@ vector<int> asteroidCollision(int N, vector<int> &asteroids) {
                 else
                     break;
             }
-            /*
-                This should happen only once
-                Consider the case when stack has ... 5 5 5 and asteroids[i] = -5
-                The extreme 5 and -5 collide and explode but the other two 5's will not have any impact
-                Stack will be ... 5 5
-            */
+            
             if(!st.empty() && st.top() == -1 * asteroids[i])
                 st.pop();
-            /*
-                When stack is empty and the value is negative
-                It has to be pushed to the stack.
-            */
+           
             if(st.empty())
                 st.push(asteroids[i]);
         }
