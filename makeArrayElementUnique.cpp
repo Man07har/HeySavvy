@@ -32,26 +32,16 @@ Constraints:
 1 ≤ N ≤ 105 
 1 ≤ arr[i] ≤ 109 */
 
-long long int minIncrements(vector<int> a, int n) {
-
-        // Code here
-
-        ll ans=0;
-
-        sort(a.begin(),a.end());
-
-        for(int i=1;i<n;i++){
-
-            if(a[i-1]>=a[i]){
-
-                ans+=a[i-1]-a[i]+1;
-
-                a[i]=a[i-1]+1;
-
+ long long int minIncrements(vector<int> arr, int N) {
+        map<int,int> mp;
+        for(int i = 0;i<arr.size();i++)  
+            mp[arr[i]]++;
+        int ans = 0;
+        for(auto x:mp) {
+            if(x.second>1) {
+                ans += x.second - 1;
+                mp[x.first+1]+=x.second - 1;
             }
-
         }
-
         return ans;
-
     }
