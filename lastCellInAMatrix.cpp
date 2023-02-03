@@ -42,21 +42,38 @@ Constraints:
 0<= matrix[i][j] <=1 */
 
 
-pair<int,int> endPoints(vector<vector<int>> matrix){
-        // right, down, left, up ->array
-        vector<pair<int, int>> dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-        int n = matrix.size(), m = matrix[0].size();
-        int i=0, j=0, k=0;
+pair<int,int> endPoints(vector<vector<int>> matrix, int R, int C){
+        int i = 0, j = 0;
         pair<int, int> ans;
-        while(i>=0 && j>=0 && i< n && j<m){
-            ans = {i, j};
-            if(matrix[i][j]==1){
-                matrix[i][j]=0;
-                // using modulus so our index will never go out of bound
-                k = (k+1)%4; 
+        int x = 0, y = 1;
+        while(i >= 0 && i < R && j >= 0 && j < C)
+        {
+            if(matrix[i][j] == 0)
+            {
+                ans = {i, j};
+                i += x;
+                j += y;
             }
-            i = i+dir[k].first;
-            j = j+dir[k].second;
+            else
+            {
+                matrix[i][j] = 0;
+                if(x == 0 && y == 1)
+                {
+                    x = 1; y = 0;
+                }
+                else if(x == 1 && y == 0)
+                {
+                    x = 0; y = -1;
+                }
+                else if(x == 0 && y == -1)
+                {
+                    x = -1; y = 0;
+                }
+                else if(x == -1 && y == 0)
+                {
+                    x = 0; y = 1;
+                }
+            }
         }
         return ans;
     }
