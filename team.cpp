@@ -28,4 +28,27 @@ In the first sample Petya and Vasya are sure that they know how to solve the fir
 In the second sample the friends will only implement the second problem, as Vasya and Tonya are sure about the solution.
 
  */
+#include <iostream>
 
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int sure_count = 0;
+    for (int i = 0; i < n; i++) {
+        int petya, vasya, tonya;
+        cin >> petya >> vasya >> tonya;
+
+        // Count the number of friends who are sure about the solution
+        int sum = petya + vasya + tonya;
+        if (sum >= 2) {
+            sure_count++;
+        }
+    }
+
+    cout << sure_count << endl;
+
+    return 0;
+}
